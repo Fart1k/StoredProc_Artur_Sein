@@ -11,7 +11,7 @@ using StoredProcedure.Data;
 namespace StoredProcedure.Migrations
 {
     [DbContext(typeof(StoredProcDbContext))]
-    [Migration("20251010114915_init")]
+    [Migration("20251010130618_init")]
     partial class init
     {
         /// <inheritdoc />

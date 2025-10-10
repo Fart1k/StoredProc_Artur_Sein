@@ -1,0 +1,30 @@
+﻿<body style="padding: 10px">
+	<div class="col-xs-8">
+		<div class="panel-heading">
+			<h3>Students</h3>
+		</div>
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th scope="col">FirstName</th>
+					<th scope="col">LastName</th>
+					<th scope="col">Gender</th>
+					<th scope="col">Age</th>
+					<th scope="col">Class</th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach (var stu in Model)
+				{
+					<tr>
+						<td>@stu.FirstName</td>
+						<td>@stu.LastName</td>
+						<td>@stu.Gender</td>
+						<td>@stu.Age</td>
+						<td>@stu.Class</td>
+					</tr>
+				}
+			</tbody>
+		</table>
+	</div>
+</body>
