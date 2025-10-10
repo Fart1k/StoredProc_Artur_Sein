@@ -1,0 +1,61 @@
+﻿<body style="padding: 10px">
+	<div class="col-xs-8">
+		<div class="panel-heading">
+			<h3>Employee Search Form</h3>
+		</div>
+		<form asp-controller="Employee" asp-action="DynamicSQL">
+			<div>
+				<label for="FirstName">FirstName</label>
+				<br />
+				<input type="text" name="FirstName" placeholder="FirstName"/>
+			</div>
+			<br />
+
+			<div>
+				<label for="LastName">LastName</label>
+				<br />
+				<input type="text" name="LastName" placeholder="LastName" />
+			</div>
+			<br />
+
+			<div>
+				<label for="Salary">Salary</label>
+				<br />
+				<input type="number" name="Salary" placeholder="Salary" />
+			</div>
+			<br />
+
+			<div>
+				<label for="Gender">Gender</label>
+				<br />
+				<select name="Gender">
+					<option value="Male">Male</option>
+					<option value="female">Female</option>
+				</select>
+			</div>
+			<br />
+			<input type="submit" value="DynamicSQL"/>
+		</form>
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th scope="col">FirstName</th>
+					<th scope="col">LastName</th>
+					<th scope="col">Salary</th>
+					<th scope="col">Gender</th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach (var emp in Model)
+				{
+					<tr>
+						<td>@emp.FirstName</td>
+						<td>@emp.LastName</td>
+						<td>@emp.Salary</td>
+						<td>@emp.Gender</td>
+					</tr>
+				}
+			</tbody>
+		</table>
+	</div>
+</body>
