@@ -11,7 +11,7 @@ using StoredProcedure.Data;
 namespace StoredProcedure.Migrations
 {
     [DbContext(typeof(StoredProcDbContext))]
-    [Migration("20251010130618_init")]
+    [Migration("20251014144427_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -43,6 +43,31 @@ namespace StoredProcedure.Migrations
                     b.HasKey("FirstName");
 
                     b.ToTable("Employees");
+                });
+
+            modelBuilder.Entity("StoredProcedure.Models.Student", b =>
+                {
+                    b.Property<string>("FirstName")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("Age")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Class")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Gender")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("FirstName");
+
+                    b.ToTable("Students");
                 });
 #pragma warning restore 612, 618
         }

@@ -16,13 +16,9 @@ namespace StoredProcedure.Controllers
             _context = context;
             _confiq = config;
         }
-        public IActionResult Index()
-        {
-            return View();
-        }
 
         [HttpGet]
-        public IActionResult StudentSearch()
+        public IActionResult Index()
         {
             string connectionStr = _confiq.GetConnectionString("DefaultConnection");
 
@@ -30,8 +26,8 @@ namespace StoredProcedure.Controllers
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con;
-                cmd.CommandText = "dbo.spSearchStudent";
-                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.CommandText = "spSearchStudent";
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 con.Open();
                 SqlDataReader sdr = cmd.ExecuteReader();
                 List<Student> model = new List<Student>();

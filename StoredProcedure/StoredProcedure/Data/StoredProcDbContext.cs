@@ -11,5 +11,6 @@ namespace StoredProcedure.Data
         }
 
         public DbSet<Employee> Employees { get; set; }
+        public DbSet<Student> Students { get; set; }
     }
 }
